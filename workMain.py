@@ -1,4 +1,5 @@
 import sys
+import pyodbc
 from PyQt4 import QtCore, QtGui, uic
 from PyQt4.QtGui import *
 
@@ -16,12 +17,57 @@ class Ui_MainWindow(QtGui.QMainWindow):
         w = QWidget()
         # Show a message box
         result = QMessageBox.information(w, "Message", "Probando la conexion con la base de datos ")
+        #Inicio de recuperacion de datos
+        nom_instancia_origen = self.nombre_instancia_origen.text()
+        nom_basedatos_origen = self.nombre_basedatos_origen.text()
+        port_origen = self.puerto_origen.text()
+        nom_usuario_origen = self.nombre_usuario_origen.text()
+        pass_origen = self.password_origen.text()
+        print ('########################################')
+        print ('##########-DATOS RECUPERADOS-###########')
+        print ('########################################')
+        print (nom_instancia_origen)
+        print (nom_basedatos_origen)
+        print (port_origen)
+        print (nom_usuario_origen)
+        print (pass_origen)
+        print ('#######-FIN RECUPERACION DE DATOS-######')
+        
+        
+        #server = 'DESKTOP-BNJBOHG\MONKEYSERVER' 
+        server = 'DESKTOP-BNJBOHG\MONKEYSERVER' 
+        database = 'Northwind' 
+        username = 'Master' 
+        password = 'holamundo' 
+        #tcon = 'yes'
+        cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER='+server+';PORT=1443;DATABASE='+database+';UID='+username+';PWD='+ password)
+        #cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};host='+server+';DATABASE='+database+';UID='+username+';PWD='+ password)
+        #cnxn = pyodbc.connect(driver='{ODBC Driver 17 for SQL Server}', SERVER=server, database=database, trusted_connection=tcon, user=username, password=password)
+        #cnxn = "Driver=FreeTDS;Server=DESKTOP-U6NBTOI;tds_version=7.2;Database=Aeropuerto;Uid=PRUEBA:pwd=prueba:port=1433"
+        cursor = cnxn.cursor()
+
+        print ('Llego exitosamente hasta el final')
 
     #Metodo del boton_probar_destino
     def probar_destino(self):
         w = QWidget()
         # Show a message box
         result = QMessageBox.information(w, "Message", "Probando la conexion con la base de datos ")
+        #Inicio de recuperacion de datos
+        nom_instancia_destino = self.nombre_instancia_destino.text()
+        nom_basedatos_destino = self.nombre_basedatos_destino.text()
+        port_destino = self.puerto_destino.text()
+        nom_usuario_destino = self.nombre_usuario_destino.text()
+        pass_destino = self.password_destino.text()
+        print ('########################################')
+        print ('##########-DATOS RECUPERADOS-###########')
+        print ('########################################')
+        print (nom_instancia_destino)
+        print (nom_basedatos_destino)
+        print (port_destino)
+        print (nom_usuario_destino)
+        print (pass_destino)
+        print ('#######-FIN RECUPERACION DE DATOS-######')
 
 if __name__ == "__main__":
     app = QtGui.QApplication(sys.argv)
