@@ -32,19 +32,15 @@ class Ui_MainWindow(QtGui.QMainWindow):
         print (nom_usuario_origen)
         print (pass_origen)
         print ('#######-FIN RECUPERACION DE DATOS-######')
-        
-        
-        #server = 'DESKTOP-BNJBOHG\MONKEYSERVER' 
-        server = 'DESKTOP-BNJBOHG\MONKEYSERVER' 
-        database = 'Northwind' 
-        username = 'Master' 
-        password = 'holamundo' 
-        #tcon = 'yes'
-        cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER='+server+';PORT=1443;DATABASE='+database+';UID='+username+';PWD='+ password)
-        #cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};host='+server+';DATABASE='+database+';UID='+username+';PWD='+ password)
-        #cnxn = pyodbc.connect(driver='{ODBC Driver 17 for SQL Server}', SERVER=server, database=database, trusted_connection=tcon, user=username, password=password)
-        #cnxn = "Driver=FreeTDS;Server=DESKTOP-U6NBTOI;tds_version=7.2;Database=Aeropuerto;Uid=PRUEBA:pwd=prueba:port=1433"
-        cursor = cnxn.cursor()
+
+        server = '192.168.1.14' 
+        database = 'Northwind'  
+        username = 'JEANCA' 
+        password = '1234' 
+
+        cnxn = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};SERVER='+server+';PORT=1433;DATABASE='+database+';UID='+username+';PWD='+ password)
+
+        cursor = cnxn.cursor() 
 
         print ('Llego exitosamente hasta el final')
 
