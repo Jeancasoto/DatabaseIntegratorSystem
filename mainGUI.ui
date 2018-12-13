@@ -236,7 +236,7 @@
        <string>Base de Datos Destino</string>
       </property>
      </widget>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>10</x>
@@ -382,28 +382,7 @@
        </item>
       </layout>
      </widget>
-     <zorder>lineEdit_2</zorder>
-     <zorder>label_5</zorder>
-     <zorder>label_3</zorder>
-     <zorder>pushButton</zorder>
-     <zorder>lineEdit_4</zorder>
-     <zorder>label_4</zorder>
-     <zorder>label</zorder>
-     <zorder>lineEdit_5</zorder>
-     <zorder>label_2</zorder>
-     <zorder>lineEdit</zorder>
-     <zorder>lineEdit_3</zorder>
-     <zorder>nombre_basedatos_origen</zorder>
-     <zorder>label_2</zorder>
-     <zorder>password_origen</zorder>
-     <zorder>label_3</zorder>
-     <zorder>label_4</zorder>
-     <zorder>puerto_origen</zorder>
-     <zorder>boton_probar_origen</zorder>
-     <zorder>nombre_usuario_origen</zorder>
-     <zorder>nombre_instancia_origen</zorder>
-     <zorder>label_5</zorder>
-     <zorder>label</zorder>
+     <zorder>layoutWidget</zorder>
      <zorder>layoutWidget</zorder>
      <zorder>boton_guardar_configuracion</zorder>
      <zorder>label_11</zorder>
@@ -437,7 +416,7 @@
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>70</x>
@@ -704,8 +683,20 @@
      <height>25</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuCargar">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionCargar"/>
+   </widget>
+   <addaction name="menuCargar"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionCargar">
+   <property name="text">
+    <string>Cargar</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
